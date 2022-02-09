@@ -1,0 +1,14 @@
+version: '3'
+services:
+  connector-cvetrends:
+    image: opencti/connector-cvetrends:rolling
+    environment:
+      - OPENCTI_URL=http://opencti:8080
+      - OPENCTI_TOKEN=ChangeMe
+      - CONNECTOR_ID=ChangeMe
+      - CONNECTOR_TYPE=EXTERNAL_IMPORT
+      - CONNECTOR_NAME=Cve Trends
+      - CONNECTOR_SCOPE=Vulnerability # MIME type or Stix Object
+      - CONNECTOR_CONFIDENCE_LEVEL=100 # From 0 (Unknown) to 100 (Fully trusted)
+      - CONNECTOR_LOG_LEVEL=info
+    restart: always
